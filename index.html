@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,292 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/f2a11ef27b.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-<!-- header section-->
-<header>
-    <a href="#" class="logo">
-    <img src="images/logo.png" alt="Логотип">
-    <div class="logo-text">
-        <span class="blue">SIMPLE</span><span class="green">SWAP</span>
-    </div>
-</a>
+    <!-- header section-->
+    <header>
+        <a href="#info" class="logo">
+            <img src="./images/logo.png" alt="Логотип">
+            <div class="logo-text">
+                <span class="blue">SIMPLE</span><span class="green">SWAP</span>
+            </div>
+        </a>
 
+        <input type="checkbox" name="menu" id="menu">
+        <label for="menu"><i class="fas fa-bars" style="color: #ffffff;"></i></label>
 
+        <nav class="navbar">
+            <div class="nav-center">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#">News</a>
+                <a href="#footer">Contacts</a>
+            </div>
+            <div class="nav-right">
+                <img src="images/LOCATION.png" alt="Location" class="location-logo" id="map-icon">
+                <a href="#map-section">KYIV</a>
+            </div>
+        </nav>
+    </header>
+    <!-- header section-->
 
-    <input type="checkbox" name="menu" id="menu">
-    <label for="menu"><i class="fas fa-bars" style="color: #ffffff;"></i></label>
-
-    <nav class="navbar">
-        <div class="nav-center">
-            <a href="#">Services</a>
-            <a href="#">About</a>
-            <a href="#">News</a>
-            <a href="#">Contacts</a>
+    <!-- home section -->
+    <section class="home" id="home">
+        <div class="content">
+            <div class="text-group">
+                <h1 class="angled-text">SWAP CURRENCY</h1>
+                <p class="sub-text">IN KYIV</p>
+            </div>
+            <img src="images/swap_img.png" alt="Exchange Illustration" class="home-image">
         </div>
-        <div class="nav-right">
-            <img src="images/LOCATION.png" alt="Location" class="location-logo">
-            <a href="#">KYIV</a>
+        <div class="exchange-widget">
+            <div class="exchange-header">
+                <h3>CURRENCY EXCHANGE RATE KYIV</h3>
+                <span class="exchange-date">28.10.2025</span>
+            </div>
+            <table class="exchange-table">
+                <thead>
+                    <tr>
+                        <th>Currency</th>
+                        <th>Buy</th>
+                        <th>Sell</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="images/usa_logo.png" alt="USD" class="usd-logo"> USD/UAH</td>
+                        <td>41.5</td>
+                        <td>41.6</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/uk_logo.png" alt="GBP" class="gbp-logo"> GBP/UAH</td>
+                        <td>56.2</td>
+                        <td>57.5</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/eu_logo.png" alt="EUR" class="eur-logo"> EUR/UAH</td>
+                        <td>48.5</td>
+                        <td>48.75</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <a href="#" class="all-currency">ALL CURRENCY</a>
         </div>
-    </nav>
-</header>
-<!-- header section-->
+    </section>
+    <!-- home section -->
+
+    <!-- info section -->
+    <section class="info-section" id="info">
+        <p>
+            Currency exchange in Kyiv becomes easier and safer with SimpleSwap!
+            Special conditions for regular customers. Fix the online currency exchange rate in Kyiv
+            and the amount through our website and receive cash at any of our exchangers
+            at a time convenient for you.
+        </p>
+    </section>
+    <!-- info section -->
+
+    <!-- Create order form -->
+    <section class="order-section">
+        <div class="order-widget">
+            <div class="order-header">
+                <span>Book currency online</span>
+                <div class="pair">USD/UAH</div>
+            </div>
+
+            <div class="order-fields">
+                <div class="field">
+                    <label>YOU GIVE</label>
+                    <div class="input-box">
+                        <input type="number" value="100" min="0">
+                        <span class="currency">$USD</span>
+                    </div>
+                </div>
+
+                <div class="swap-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+
+                <div class="field">
+                    <label>YOU GET</label>
+                    <div class="input-box">
+                        <input type="number" value="4150" min="0">
+                        <span class="currency">₴UAH</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="create-order">CREATE ORDER</button>
+        </div>
+
+        <div class="order-image">
+            <img src="images/usd_eur_swap.png" alt="Exchange hands illustration">
+        </div>
+    </section>
+    <!-- Create order form -->
+
+    <!-- We on the map section -->
+    <section class="map-section" id="map-section">
+        <h2>WE ON THE MAP</h2>
+        <div class="map-content">
+            <div class="character">
+                <img src="images/boy_with_map.png" alt="Boy holding map">
+            </div>
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaflet JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        const map = L.map('map').setView([50.4501, 30.5234], 12); // Центр Києва
+
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+
+        const branches = [
+            { name: "Відділення 1 — Центр", coords: [50.4501, 30.5234] },
+            { name: "Відділення 2 — Поділ", coords: [50.4694, 30.5087] },
+            { name: "Відділення 3 — Лівий берег", coords: [50.4450, 30.6100] },
+            { name: "Відділення 4 — Оболонь", coords: [50.5110, 30.4980] },
+        ];
+
+
+        branches.forEach(branch => {
+            L.marker(branch.coords)
+                .addTo(map)
+                .bindPopup(`<b>${branch.name}</b>`)
+                .openPopup();
+        });
+    </script>
+    <!-- We on the map section -->
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <h2>SERVICES</h2>
+
+        <div class="services-grid">
+            <div class="service-card green">
+                <div class="text">
+                    <h3>WHOLESALE<br>CURRENCY<br>EXCHANGE</h3>
+                </div>
+                <img src="images/service1.jpg" alt="Currency Exchange">
+            </div>
+
+            <div class="service-card blue">
+                <div class="text">
+                    <h3>CRYPTO<br>EXCHANGE</h3>
+                </div>
+                <img src="images/service2.jpg" alt="Crypto Exchange">
+            </div>
+
+            <div class="service-card blue">
+                <div class="text">
+                    <h3>WORLDWIDE<br>MONEY<br>TRANSFERS</h3>
+                </div>
+                <img src="images/service3.jpg" alt="Money Transfers">
+            </div>
+
+            <div class="service-card green">
+                <div class="text">
+                    <h3>BUYING<br>SILVER/GOLD</h3>
+                </div>
+                <img src="images/service4.jpg" alt="Gold and Silver">
+            </div>
+        </div>
+    </section>
+    <!-- End Services Section -->
+
+    <!-- About Us in Numbers Section -->
+    <section class="numbers-section" id="about">
+        <h2>ABOUT US IN NUMBERS</h2>
+        <div class="numbers-grid">
+            <div class="number-card">
+                <h3>1200 +</h3>
+                <span class="label">TRANSFERS PER/MONTH</span>
+            </div>
+            <div class="number-card">
+                <h3>5000 +</h3>
+                <span class="label">HAPPY CUSTOMERS</span>
+            </div>
+            <div class="number-card">
+                <h3>50 +</h3>
+                <span class="label">BRANCHES IN UKRAINE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-text">
+                    <span class="blue">SIMPLE</span><span class="green">SWAP</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-contacts">
+                <h3>CONTACTS</h3>
+                <p><i class="fas fa-phone"></i> +044 999 99 99</p>
+                <p><i class="fas fa-phone"></i> +044 888 88 88</p>
+                <p><i class="fas fa-envelope"></i> simpleswap@email.ua</p>
+            </div>
+
+            <div class="footer-services">
+                <h3>SERVICES</h3>
+                <p>WHOLESALE CURRENCY EXCHANGE</p>
+                <p>CRYPTO EXCHANGE</p>
+                <p>BUYING SILVER/GOLD</p>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <span>2025 ©</span>
+            <p>
+                <strong>SIMPLESWAP</strong> - Director and owner Pan Roman<br>
+                Certificate for a mark for goods and services - No. 111111
+            </p>
+        </div>
+    </footer>
 
 </body>
+
 </html>
+
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+
+            if (targetId === "#") return;
+
+            e.preventDefault();
+            const target = document.querySelector(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+
+    document.getElementById('map-icon').addEventListener('click', () => {
+        document.querySelector('#map-section').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
