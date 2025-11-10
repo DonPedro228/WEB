@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --green: #2EC20D;
+    --blue: #4184B0;
+    --dark-blue: #0E2230;
+    --black: #151414;
+    --white: #fff;
+    --grey: #c1bcbc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--dark-blue);
+    color: var(--white);
+    padding-top: 90px;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    background: rgba(21, 20, 20, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 45px;
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.logo-text .blue {
+    color: var(--blue);
+}
+
+.logo-text .green {
+    color: var(--green);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.location-logo {
+    width: 20px;
+    height: auto;
+}
+
+.nav-right .city {
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-right .city:hover {
+    color: var(--green);
+}
+
+/* News Section */
+.news-section {
+    position: relative;
+    background: var(--dark-blue);
+    padding: 0 10% 5rem;
+    min-height: 100vh;
+}
+
+/* News container */
+.news-container {
+    background: #1A1616;
+    border-radius: 0.8rem;
+    padding: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+    margin-top: 0.5rem;
+}
+
+.news-card {
+    background: #0E2230;
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+    transition: 0.3s ease;
+}
+
+.news-card:hover {
+    background: var(--blue);
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: #151414;
+    color: var(--white);
+    padding: 3rem 8%;
+    font-family: 'Inter', sans-serif;
+    margin-top: 5rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 2rem;
+
+}
+
+.footer-logo .logo-text {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.footer-logo .blue {
+    color: var(--blue);
+}
+
+.footer-logo .green {
+    color: var(--green);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-right: 2rem;
+    margin-left: 1rem;
+}
+
+.social-icons a {
+    display: inline-block;
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--green);
+    transform: scale(1.1);
+}
+
+.footer-contacts h3,
+.footer-services h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-contacts p,
+.footer-services p {
+    color: #646363;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+.footer-contacts i {
+    color: var(--green);
+    margin-right: 0.6rem;
+}
+
+.footer-divider {
+    border: none;
+    height: 1px;
+    background: #8B8282;
+    margin-bottom: 1.5rem;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: #8B8282;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+/*Footer*/
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .footer-logo .social-icons {
+        justify-content: center;
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-align: right;
+        gap: 1rem;
+    }
+
+    .footer-bottom span {
+        order: 0;
+        text-align: left;
+        flex: 1;
+    }
+
+    .footer-bottom p {
+        text-align: right;
+        font-size: 0.5rem;
+        flex: 2;
+        margin: 0;
+    }
+}
