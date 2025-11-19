@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/f2a11ef27b.js" crossorigin="anonymous"></script>
 </head>
 
+
 <body>
 
     <!-- header section-->
@@ -231,6 +232,64 @@
         </div>
     </section>
 
+    <!-- Pricing / Offers for Exchange -->
+    <section class="offers-section" id="offers">
+        <h2>OUR OFFERS</h2>
+        <div class="offers-grid">
+            <article class="offer-card offer-online">
+                <div class="offer-top">
+                    <i class="fas fa-calendar-check fa-2x"></i>
+                    <h3>ONLINE RESERVATION</h3>
+                    <p class="subtitle">Fix the rate online · 30 min pickup</p>
+                </div>
+                <div class="offer-price">
+                    <span class="big">Fixed</span><span class="small">rate</span>
+                </div>
+                <ul class="offer-features">
+                    <li>Fixed exchange rate for 30 minutes</li>
+                    <li>Reserve via website or Telegram</li>
+                    <li>Free time adjustment within 15 minutes</li>
+                </ul>
+                <button class="offer-btn">BOOK NOW</button>
+            </article>
+
+            <article class="offer-card offer-vip">
+                <div class="offer-top">
+                    <i class="fas fa-shipping-fast fa-2x"></i>
+                    <h3>VIP CASH DELIVERY</h3>
+                    <p class="subtitle">Home / Office delivery</p>
+                </div>
+                <div class="offer-price">
+                    <span class="big">From</span><span class="small">20 ₴/km</span>
+                </div>
+                <ul class="offer-features">
+                    <li>Courier with security</li>
+                    <li>Pay by cash or card</li>
+                    <li>Operation insurance included</li>
+                </ul>
+                <button class="offer-btn">ORDER DELIVERY</button>
+            </article>
+
+            <article class="offer-card offer-wholesale">
+                <div class="offer-top">
+                    <i class="fas fa-handshake fa-2x"></i>
+                    <h3>B2B / WHOLESALE</h3>
+                    <p class="subtitle">Special rates for large sums</p>
+                </div>
+                <div class="offer-price">
+                    <span class="big">Best</span><span class="small">rates</span>
+                </div>
+                <ul class="offer-features">
+                    <li>Individual exchange rates</li>
+                    <li>Contracts and reporting</li>
+                    <li>Instant servicing</li>
+                </ul>
+                <button class="offer-btn">CONTACT US</button>
+            </article>
+        </div>
+    </section>
+
+
     <!-- FOOTER SECTION -->
     <footer class="footer" id="footer">
         <div class="footer-content">
@@ -271,6 +330,26 @@
         </div>
     </footer>
 
+
+    <!-- CONTACT WIDGET -->
+    <div class="contact-float">
+        <button class="contact-btn">
+            💬
+        </button>
+
+        <div class="contact-panel">
+            <div class="contact-header">
+                <h3>Contact Us</h3>
+                <button class="close-btn">✕</button>
+            </div>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" rows="4" required></textarea>
+                <button type="submit" class="send-btn">Send</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
@@ -294,5 +373,19 @@
 
     document.getElementById('map-icon').addEventListener('click', () => {
         document.querySelector('#map-section').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+
+<script>
+    const contactBtn = document.querySelector('.contact-btn');
+    const contactPanel = document.querySelector('.contact-panel');
+    const closeBtn = document.querySelector('.close-btn');
+
+    contactBtn.addEventListener('click', () => {
+        contactPanel.classList.toggle('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        contactPanel.classList.remove('active');
     });
 </script>

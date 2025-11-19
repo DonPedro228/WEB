@@ -626,6 +626,260 @@ body {
     scroll-margin-top: 200px;
 }
 
+/* FLOATING CONTACT WIDGET  */
+.contact-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.contact-btn {
+    width: 60px;
+    height: 60px;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+    background: var(--green);
+}
+
+.contact-panel {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 320px;
+    background: #1A1616;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    display: none;
+    animation: slideUp 0.4s ease forwards;
+}
+
+.contact-panel.active {
+    display: block;
+}
+
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-header h3 {
+    color: var(--blue);
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--green);
+}
+
+.contact-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contact-panel input,
+.contact-panel textarea {
+    background: transparent;
+    border: 1px solid var(--blue);
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    color: var(--white);
+    font-size: 1rem;
+    outline: none;
+}
+
+.contact-panel input::placeholder,
+.contact-panel textarea::placeholder {
+    color: var(--grey);
+}
+
+.send-btn {
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.7rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #32b321;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* OFFERS / PRICING CARDS */
+.offers-section {
+    padding: 4rem 8%;
+    background: transparent;
+    color: var(--white);
+    text-align: center;
+}
+
+.offers-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.offer-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+    border-radius: 0.8rem;
+    padding: 1.6rem;
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease;
+    cursor: default;
+    min-height: 360px;
+}
+
+.offer-top {
+    text-align: center;
+}
+
+.offer-top i {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.6rem;
+}
+
+.offer-top h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.2rem;
+    font-weight: 800;
+}
+
+.offer-top .subtitle {
+    color: var(--grey);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.offer-price {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 0.6rem 0 1rem;
+}
+
+.offer-price .big {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.offer-price .small {
+    font-size: 0.9rem;
+    color: var(--grey);
+}
+
+.offer-features {
+    margin: 0.5rem 0 1.4rem;
+    padding: 0;
+    list-style: none;
+    color: var(--grey);
+    text-align: left;
+}
+
+.offer-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.offer-btn {
+    background: var(--green);
+    color: var(--white);
+    padding: 0.85rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.offer-btn:hover {
+    transform: translateY(-4px);
+}
+
+.offer-online {
+    background-color: rgba(40, 148, 28, 0.12);
+}
+
+.offer-vip {
+    background-color: rgba(9, 91, 224, 0.08);
+}
+
+.offer-wholesale {
+    background-color: rgba(210, 50, 45, 0.06);
+}
+
+.offer-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.55);
+}
+
+.offer-online:hover {
+    background: linear-gradient(180deg, #28941C22, #28941C44);
+}
+
+.offer-vip:hover {
+    background: linear-gradient(180deg, #095BE022, #095BE044);
+}
+
+.offer-wholesale:hover {
+    background: linear-gradient(180deg, #D2322D22, #D2322D44);
+}
+
+
 /* FOOTER */
 .footer {
     background: #151414;
@@ -983,6 +1237,18 @@ body {
     }
 }
 
+/*Offers*/
+@media (max-width: 980px) {
+    .offers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 /*Footer*/
 @media (max-width: 768px) {
@@ -1020,5 +1286,53 @@ body {
         font-size: 0.5rem;
         flex: 2;
         margin: 0;
+    }
+
+    /* Contact Widget */
+    @media (max-width: 600px) {
+        .contact-float {
+            bottom: 1rem;
+            right: 1rem;
+        }
+
+        .contact-btn {
+            width: 54px;
+            height: 54px;
+            font-size: 1.6rem;
+        }
+
+        .contact-panel {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            border-radius: 1rem 1rem 0 0;
+            padding: 1.2rem;
+            animation: slideUp 0.35s ease forwards;
+        }
+
+        .contact-panel form {
+            gap: 0.7rem;
+        }
+
+        .contact-panel input,
+        .contact-panel textarea {
+            font-size: 0.95rem;
+            padding: 0.7rem;
+        }
+
+        .send-btn {
+            padding: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .close-btn {
+            font-size: 1.5rem;
+        }
+
+        .contact-header h3 {
+            font-size: 1.2rem;
+        }
     }
 }
